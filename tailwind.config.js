@@ -8,6 +8,13 @@ module.exports = {
             fontFamily: {
                 basic: ["Montserrat", "sans-serif"],
             },
+            colors: {
+                zsi: {
+                    500: '#FF272D',
+                    600: '#B60115',
+                    700: '#89010D',
+                }
+            }
         },
     },
     plugins: [],
