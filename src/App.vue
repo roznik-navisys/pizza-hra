@@ -1,8 +1,14 @@
 <template>
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Hello Vue 3 + Vite" />
+    <div class="h-full w-full p-4 text-center flex min-w-0 flex-col flex-1">
+        <router-view />
+    </div>    
 </template>
 
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 </script>
+
+<style>
+html, body, #app {
+    @apply h-full
+}
+</style>
