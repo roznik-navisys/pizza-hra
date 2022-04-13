@@ -9,9 +9,9 @@ const count = ref(0)
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1 class="text-red-600 font-fancy">{{ msg }}</h1>
 
-  <p>
+  <p class="flex gap-2">
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VS Code</a>
     +
@@ -32,9 +32,3 @@ const count = ref(0)
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
 </template>
-
-<style scoped>
-a {
-  color: #42b983;
-}
-</style>
