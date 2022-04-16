@@ -2,9 +2,9 @@
 <div class="flex flex-1 flex-col justify-between py-4">
     <image-large :image="zsiLogo" class="h-12" />
     <div class="flex flex-col gap-14">
-        <h1 class="text-[2.5rem] leading-snug max-w-[200px] mx-auto text-center font-extrabold uppercase">
+        <heading-primary>
             Vyřeš pizza záhadu
-        </h1>
+        </heading-primary>
         <div class="flex flex-col gap-8 items-center">
             <button-primary @click="selectGroup('A')">
                 Skupina A
@@ -25,6 +25,7 @@ import ButtonPrimary from '../components/ButtonPrimary.vue';
 import zsiLogo from '../assets/zsi-logo.png'
 import { useRouter } from 'vue-router';
 import ImageLarge from '../components/ImageLarge.vue';
+import HeadingPrimary from '../components/HeadingPrimary.vue';
 
 const router = useRouter()
 

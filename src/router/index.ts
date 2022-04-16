@@ -29,8 +29,20 @@ const routes: Array<RouteRecordRaw> = [
                     {
                         path: 'article',
                         name: 'Article',
-                        meta: { name: 'Online článek' },
+                        meta: { name: 'Online článek', next: 'Magazine' },
                         component: () => import('../views/game-content/Article.vue'),
+                    },
+                    {
+                        path: 'magazine',
+                        name: 'Magazine',
+                        meta: { name: 'Časopis', prev: 'Article', next: 'News' },
+                        component: () => import('../views/game-content/Magazine.vue'),
+                    },
+                    {
+                        path: 'news',
+                        name: 'News',
+                        meta: { name: 'Uniklé zprávy', prev: 'Magazine', },
+                        component: () => import('../views/game-content/Magazine.vue'),
                     },
                 ],
             },
