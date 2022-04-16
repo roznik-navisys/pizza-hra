@@ -1,35 +1,47 @@
 <template>
 <div class="flex flex-1 flex-col gap-8 py-4">
-    <image-large class="h-60" :image="pizzaPlace" />
-    <heading-primary>
-        Nelegální pizza?
-    </heading-primary>        
-    <span class="text-zsi-500 text-base font-semibold ">
-        Včera, 8:00
-    </span>
-    <hr class="w-28 mx-auto border-t border-gray-500" />
-    <div class="text-[1.0625rem] flex flex-col gap-8 px-4 relative">
+    <h1 class="text-[1.75rem] font-extrabold mt-2">
+        Pizza s ananasem zase udeřila. Kdo bude další?
+    </h1>
+    <profile-info :image="aktualneLogo" smaller-image heading="Aktuality365.cz" sub-heading="Včera, 19:00" />
+    <div class="text-[1.0625rem] flex flex-col gap-8 relative text-left mb-8">
         <p>
-            Majitelé podniku Jablečná borovice byli nařčeni, že ve svém sklepě nelegálně pěstují ananasy, které pak servírují na svých pizzách.
+            Na sociálních sítích se v posledních dnech šíří příběh ženy, která si objednala pizzu v pizzerii Jablečná borovice a její tříletý syn měl alergickou reakci. Žena tvrdí, že její syn je vysoce alergický na ananas.
         </p>
         <p>
-            Lidé jsou z těchto praktik pobouřeni. Ve společnosti totiž převládá názor, že ananas na pizzu nepatří. Někteří takové postupy označují dokonce za gastronomický zločin.
+        “V pizze musel být ananas bez našeho vědomí. Je to nehorázně nezodpovědné a nelegální. Měli by to tam zavřít!,” řekla žena k celé kauze.
         </p>
-        <span class="w-full h-32 bg-gradient-to-t from-white to-white/0 absolute bottom-0" />
+        <p>
+        Syn byl odvezený do nejbližší nemocnice a je pod dohledem doktorů.
+        </p>
     </div>
-    <div class="px-4 flex flex-col gap-4">
-        <hr class="mx-auto border-t-2 border-gray-300 w-full" />
-        <span class="text-gray-600 text-base font-medium">
-            Přečtěte si celý článek jen za 29 Kč.
-        </span>
+    <image-large class="h-64 -m-8" :image="ambulance" />
+    <div v-if="group === 'A'" class="flex flex-col">
+        <div class="mt-8 mb-6 font-bold self-start">
+            Komentáře <span class="text-gray-500 ml-2"> 56 </span>
+        </div>
+        <div class="flex flex-row gap-4">
+            <img :src="gabinka" class="w-10 h-10">
+            <div class="flex flex-col gap-1 items-start text-[0.9375rem]">
+                <span class="font-bold">
+                    Gábinka
+                </span>
+                <p class="text-lg text-left">
+                    Nové informace z nemocnice potvrdili, že se malý klučina pouze dusil kouskem pizzy a rodina neprovedla první pomoc.
+                    😓😓 žádný ananas tam nebyl
+                </p>
+            </div>
+        </div>
     </div>
 </div>
 </template>
 
 <script setup lang="ts">
-import pizzaPlace from '../../assets/pizza-place.png';
-import HeadingPrimary from '../../components/HeadingPrimary.vue';
+import aktualneLogo from '../../assets/aktualne-logo.png';
+import ambulance from '../../assets/ambulance.png';
+import gabinka from '../../assets/gabinka.png';
 import ImageLarge from '../../components/ImageLarge.vue';
+import ProfileInfo from '../../components/ProfileInfo.vue';
 
 const group = localStorage.getItem('group')
 </script>

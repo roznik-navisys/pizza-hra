@@ -53,8 +53,8 @@ const routes: Array<RouteRecordRaw> = [
                     {
                         path: 'article-online',
                         name: 'ArticleOnline',
-                        meta: { label: 'Online Článek', prev: 'Posts' },
-                        component: () => import('../views/game-content/Posts.vue'),
+                        meta: { label: 'Online článek', prev: 'Posts' },
+                        component: () => import('../views/game-content/ArticleOnline.vue'),
                     },
                 ],
             },
