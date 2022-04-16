@@ -6,7 +6,7 @@
             {{ currentScreenName }}
         </span>
         <img :src="arrowLeft" class="px-3 py-1 filter" :class="{ 'opacity-50 grayscale': !route.meta.next }"
-            @click="route.meta.next && router.push({ name: route.meta.next as string })" />
+            @click="route.meta.next && router.push({ name: route.meta.prev as string })" />
     </nav>
     <router-view />
     <div class="py-12">
