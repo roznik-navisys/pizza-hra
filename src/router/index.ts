@@ -27,8 +27,9 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import('../views/Game.vue'),
                 children: [
                     {
-                        path: '',
+                        path: 'article',
                         name: 'Article',
+                        meta: { name: 'Online článek' },
                         component: () => import('../views/game-content/Article.vue'),
                     },
                 ],
