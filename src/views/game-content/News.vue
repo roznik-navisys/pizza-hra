@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-1 flex-col gap-6 py-4">
-        <profile-info :image="tvLogo" :heading="group === 'A' ? 'Národní televize' : 'Česká Televize'"
+        <profile-info :image="tvLogo" heading="Národní televize"
             :sub-heading="group === 'A' ? 'včera' : 'předevčírem'" />
         <div class="text-[1.0625rem] text-left flex flex-col gap-8">
             <p>
