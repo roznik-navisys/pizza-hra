@@ -30,4 +30,6 @@
 import pizzaPlace from '../../assets/pizza-place.png';
 import HeadingPrimary from '../../components/HeadingPrimary.vue';
 import ImageLarge from '../../components/ImageLarge.vue';
+
+const group = localStorage.getItem('group')
 </script>

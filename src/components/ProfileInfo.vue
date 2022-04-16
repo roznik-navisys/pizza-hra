@@ -1,11 +1,11 @@
 <template>
     <div class="flex flex-row gap-4">
         <img :src="image" class="h-16 w-16">
-        <div class="flex flex-col items-start my-auto">
-            <span class="font-bold"> 
+        <div class="flex flex-col items-start my-auto min-w-0">
+            <span class="font-bold overflow-hidden text-ellipsis whitespace-nowrap max-w-full"> 
                 {{ heading }}
             </span>
-            <span class="text-gray-400"> 
+            <span class="text-gray-400 overflow-hidden text-ellipsis whitespace-nowrap max-w-full"> 
                 {{ subHeading }}
             </span>
         </div>

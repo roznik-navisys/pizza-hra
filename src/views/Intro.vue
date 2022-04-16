@@ -16,7 +16,7 @@
         </p>
     </div>
     <div>
-        <button-primary @click="router.push({ name: 'Article' })">
+        <button-primary @click="router.push({ name: 'ArticleIntro' })">
             Začít
         </button-primary>
     </div>
