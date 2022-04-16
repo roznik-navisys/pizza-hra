@@ -26,6 +26,6 @@ const route = useRoute();
 const router = useRouter();
 
 const currentScreenName = computed(() => {
-    return route.meta.name as string;
+    return route.meta.label as string;
 });
 </script>

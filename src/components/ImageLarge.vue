@@ -7,6 +7,6 @@ defineProps({
     image: {
         type: String,
         required: true,
-    }
+    },
 })
 </script>

@@ -5,7 +5,7 @@
         Nelegální pizza?
     </heading-primary>        
     <span class="text-zsi-500 text-base font-semibold ">
-        Včera 8:00
+        Včera, 8:00
     </span>
     <hr class="w-28 mx-auto border-t border-gray-500" />
     <div class="text-[1.0625rem] flex flex-col gap-8 px-4 relative">
