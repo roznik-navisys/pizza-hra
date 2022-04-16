@@ -10,7 +10,7 @@
     </nav>
     <router-view />
     <div class="py-12">
-        <button-primary v-if="route.meta.next" @click="router.push(route.meta.next)">
+        <button-primary v-if="route.meta.next" @click="router.push({ name: route.meta.next as string })">
             Další
         </button-primary>
     </div>

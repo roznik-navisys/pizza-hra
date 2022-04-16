@@ -47,7 +47,7 @@ const routes: Array<RouteRecordRaw> = [
                     {
                         path: 'posts',
                         name: 'Posts',
-                        meta: { label: 'Příspěvky', prev: 'News',  next: 'ArticleOnline' },
+                        meta: { label: 'Příspěvky', prev: 'News', next: 'ArticleOnline' },
                         component: () => import('../views/game-content/Posts.vue'),
                     },
                     {
