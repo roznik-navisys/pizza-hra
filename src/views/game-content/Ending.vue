@@ -16,12 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute, useRouter } from 'vue-router';
 import pizzaPlaceClosed from '../../assets/pizza-place-closed.png';
 import ImageLarge from '../../components/ImageLarge.vue';
-
-const route = useRoute();
-const router = useRouter();
-
-const group = localStorage.getItem('group')
+import ButtonPrimary from '../../components/ButtonPrimary.vue';
 </script>

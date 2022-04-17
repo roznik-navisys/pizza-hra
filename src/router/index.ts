@@ -71,6 +71,11 @@ const routes: Array<RouteRecordRaw> = [
                     },
                 ],
             },
+            {
+                path: 'conclusion',
+                name: 'Conclusion',
+                component: () => import('../views/Conclusion.vue'),
+            },
         ],
     }
 ]
