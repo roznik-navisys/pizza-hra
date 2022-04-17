@@ -1,19 +1,19 @@
 <template>
     <nav class="flex justify-between py-8">
         <img :src="arrowLeft" class="px-3 py-1 transform rotate-180 filter" :class="{ 'invisible': !route.meta.prev }"
-            @click="route.meta.prev && router.push({ name: route.meta.prev as string })" />
+            @click="route.meta.prev && navigateTo(route.meta.prev as string)" />
         <span class="text-zsi-500 text-base font-semibold">
             {{ currentScreenName }}
         </span>
         <img :src="arrowLeft" class="px-3 py-1 filter" :class="{ 'invisible': !route.meta.next }"
-            @click="route.meta.next && router.push({ name: route.meta.next as string })" />
+            @click="route.meta.next && navigateTo(route.meta.next as string)" />
     </nav>
     <router-view />
     <div class="py-12">
-        <button-primary v-if="route.meta.next" @click="router.push({ name: route.meta.next as string })">
+        <button-primary v-if="route.meta.next" @click="navigateTo(route.meta.next as string)">
             Další
         </button-primary>
-        <button-primary v-else @click="router.push({ name: 'Conclusion' as string })">
+        <button-primary v-else @click="navigateTo('Conclusion' as string)">
             Ukončit
         </button-primary>
     </div>
@@ -31,4 +31,9 @@ const router = useRouter();
 const currentScreenName = computed(() => {
     return route.meta.label as string;
 });
+
+const navigateTo = (routeName: string) => {
+    router.push({ name: routeName })
+    window.scrollTo(0, 0);
+}
 </script>
