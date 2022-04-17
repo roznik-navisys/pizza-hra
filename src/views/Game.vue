@@ -1,11 +1,11 @@
 <template>
     <nav class="flex justify-between py-8">
-        <img :src="arrowLeft" class="px-3 py-1 transform rotate-180 filter" :class="{ 'opacity-50 grayscale': !route.meta.prev }"
+        <img :src="arrowLeft" class="px-3 py-1 transform rotate-180 filter" :class="{ 'invisible': !route.meta.prev }"
             @click="route.meta.prev && router.push({ name: route.meta.prev as string })" />
         <span class="text-zsi-500 text-base font-semibold">
             {{ currentScreenName }}
         </span>
-        <img :src="arrowLeft" class="px-3 py-1 filter" :class="{ 'opacity-50 grayscale': !route.meta.next }"
+        <img :src="arrowLeft" class="px-3 py-1 filter" :class="{ 'invisible': !route.meta.next }"
             @click="route.meta.next && router.push({ name: route.meta.next as string })" />
     </nav>
     <router-view />

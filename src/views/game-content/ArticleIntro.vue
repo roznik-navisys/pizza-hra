@@ -1,6 +1,6 @@
 <template>
 <div class="flex flex-1 flex-col gap-8 py-4">
-    <image-large class="h-60" :image="pizzaPlace" />
+    <image-large class="-mx-8" :image="pizzaPlace" />
     <heading-primary>
         Nelegální pizza?
     </heading-primary>        

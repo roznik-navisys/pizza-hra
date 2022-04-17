@@ -1,6 +1,6 @@
 <template>
 <div class="flex flex-1 flex-col gap-8 py-4">
-    <image-large class="h-full" :image="group === 'A' ? magazineA : magazineB" />
+    <image-large :image="group === 'A' ? magazineA : magazineB" />
 </div>
 </template>
 

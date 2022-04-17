@@ -3,7 +3,7 @@
     <h1 class="text-zsi-500 text-lg font-semibold" :to="{ name: 'Game' }">
         Skupina {{ group }}
     </h1>
-    <image-large class="h-64" :image="groupIntro" />
+    <image-large :image="groupIntro" />
     <div class="text-[1.0625rem] flex flex-col gap-8 px-4">
         <p>
             Nyní jste rozděleni do <strong>dvou skupin</strong>.

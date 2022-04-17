@@ -24,6 +24,7 @@ const routes: Array<RouteRecordRaw> = [
             {
                 path: 'game',
                 name: 'Game',
+                redirect: { name: 'ArticleIntro' },
                 component: () => import('../views/Game.vue'),
                 children: [
                     {
@@ -53,8 +54,14 @@ const routes: Array<RouteRecordRaw> = [
                     {
                         path: 'article-online',
                         name: 'ArticleOnline',
-                        meta: { label: 'Online článek', prev: 'Posts' },
+                        meta: { label: 'Online článek', prev: 'Posts', next: 'Video' },
                         component: () => import('../views/game-content/ArticleOnline.vue'),
+                    },
+                    {
+                        path: 'video',
+                        name: 'Video',
+                        meta: { label: 'Video', prev: 'ArticleOnline' },
+                        component: () => import('../views/game-content/Video.vue'),
                     },
                 ],
             },
