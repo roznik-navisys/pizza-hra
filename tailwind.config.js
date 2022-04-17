@@ -6,7 +6,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                basic: ["Montserrat", "sans-serif"],
+                basic: ["muli", "Arial", "Helvetica", "sans-serif"],
             },
             colors: {
                 zsi: {
