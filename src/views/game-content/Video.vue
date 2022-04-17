@@ -82,7 +82,7 @@
                     Gábinka
                 </span>
                 <p class="text-lg text-left">
-                    V celém videu nejde nikomu vidět do obličeje
+                    V celém videu nejde nikomu vidět do obličeje 😠
                 </p>
             </div>
         </div>

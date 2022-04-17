@@ -13,6 +13,9 @@
         <button-primary v-if="route.meta.next" @click="router.push({ name: route.meta.next as string })">
             Další
         </button-primary>
+        <button-primary v-else @click="router.push({ name: 'Conclusion' as string })">
+            Ukončit
+        </button-primary>
     </div>
 </template>
 

@@ -60,8 +60,14 @@ const routes: Array<RouteRecordRaw> = [
                     {
                         path: 'video',
                         name: 'Video',
-                        meta: { label: 'Video', prev: 'ArticleOnline' },
+                        meta: { label: 'Video', prev: 'ArticleOnline', next: 'Ending' },
                         component: () => import('../views/game-content/Video.vue'),
+                    },
+                    {
+                        path: 'ending',
+                        name: 'Ending',
+                        meta: { label: 'Závěr', prev: 'Video' },
+                        component: () => import('../views/game-content/Ending.vue'),
                     },
                 ],
             },
