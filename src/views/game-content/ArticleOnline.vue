@@ -15,8 +15,8 @@
         Syn byl odvezený do nejbližší nemocnice a je pod dohledem doktorů.
         </p>
     </div>
-    <image-large class="-mx-8" :image="ambulance" />
-    <div v-if="group === 'A'" class="flex flex-col">
+    <image-large class="-m-8" :image="ambulance" />
+    <div v-if="group === 'A'" class="flex flex-col -mb-4">
         <div class="mt-8 mb-6 font-bold self-start">
             Komentáře <span class="text-gray-500 ml-2"> 56 </span>
         </div>

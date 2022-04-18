@@ -53,11 +53,11 @@
                     přeložíte a prohodíte slova výjde vám anglický název pineapple = ananas.
                 </div>
                 <div class="flex flex-row justify-between mt-3">
-                    <div class="flex flex-row gap-1 text-[1.0625rem]">
+                    <div class="flex flex-row gap-1 text-base">
                         82
                         <img class="h-6 w-6 ml-1" :src="faceSurprise">
                     </div>
-                    <div class="text-[1.0625rem]">
+                    <div class="text-base">
                         300 Odpovědí
                     </div>
                 </div>
