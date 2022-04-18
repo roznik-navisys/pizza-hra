@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-row gap-4">
-        <img :src="image" :class="{ 'h-16 w-16': !smallerImage, 'h-12 w-12': smallerImage }" >
+        <img :src="image" :class="{ 'h-16 w-16': !smallerImage, 'h-12 w-12': smallerImage }">
         <div class="flex flex-col items-start my-auto min-w-0">
             <span class="font-bold font-moreno text-base overflow-hidden text-ellipsis whitespace-nowrap max-w-full"> 
                 {{ heading }}
@@ -30,5 +30,5 @@ defineProps({
         type: Boolean,
         default: false,
     },
-})
+});
 </script>

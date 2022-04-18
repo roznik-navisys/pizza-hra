@@ -60,7 +60,7 @@
             </div>
         </div>
         <!-- Káně 2 -->
-        <div class="flex flex-col gap-6 pt-6" v-if="group === 'A'">
+        <div v-if="group === 'A'" class="flex flex-col gap-6 pt-6">
             <profile-info :image="kaneMcWest" heading="Káně McWest" sub-heading="@pravy_rapper" />
             <div class="text-[1.0625rem] text-left flex flex-col gap-8">
                 <p>
@@ -84,7 +84,7 @@
             </div>
         </div>
         <!-- Pizza 2 -->
-        <div class="flex flex-col gap-6 pt-6" v-else>
+        <div v-else class="flex flex-col gap-6 pt-6">
             <profile-info :image="pizzaLogo" heading="Pizzerie Jablečná borovice" sub-heading="@pizza_jablecna_borovice" />
             <div class="text-[1.0625rem] text-left flex flex-col gap-8">
                 <p>
@@ -121,5 +121,5 @@ import repeatIcon from '../../assets/repeat-icon.svg';
 import heartIcon from '../../assets/heart-icon.svg';
 import downloadIcon from '../../assets/download-icon.svg';
 
-const group = localStorage.getItem('group')
+const group = localStorage.getItem('group');
 </script>

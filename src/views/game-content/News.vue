@@ -1,7 +1,10 @@
 <template>
     <div class="flex flex-1 flex-col gap-6 py-4">
-        <profile-info :image="tvLogo" heading="Národní televize"
-            :sub-heading="group === 'A' ? 'včera' : 'předevčírem'" />
+        <profile-info
+            :image="tvLogo"
+            heading="Národní televize"
+            :sub-heading="group === 'A' ? 'včera' : 'předevčírem'"
+        />
         <div class="text-[1.0625rem] text-left flex flex-col gap-8">
             <p>
                 Policie České republiky upozornila na internetovou komunikaci mezi známým raperem McWestem a pizzerií
@@ -13,7 +16,8 @@
             <div class="flex flex-col items-start">
                 <span class="text-sm text-left text-gray-500 font-medium py-2"> McWest </span>
                 <div
-                    class="bg-gray-200 text-black rounded-3xl rounded-bl-none w-3/5 py-3 px-5 text-[1.0625rem] leading-snug text-left">
+                    class="bg-gray-200 text-black rounded-3xl rounded-bl-none w-3/5 py-3 px-5 text-[1.0625rem] leading-snug text-left"
+                >
                     Yo, yo! Chtěl bych 20 pizz pro svoje boys a k tomu jeden speciál. Dovezte mi to zde
                     <span class="underline text-zsi-500"> 643Q6F8R+PH </span>.
                 </div>
@@ -21,7 +25,8 @@
             <div class="flex flex-col items-end">
                 <span class="text-sm text-left text-gray-500 font-medium py-2"> Pizzerie Jablečná borovice </span>
                 <div
-                    class="bg-zsi-500 text-white rounded-3xl rounded-br-none w-3/5 py-3 px-5 text-[1.0625rem] leading-snug text-left">
+                    class="bg-zsi-500 text-white rounded-3xl rounded-br-none w-3/5 py-3 px-5 text-[1.0625rem] leading-snug text-left"
+                >
                     Děkujeme za vaši objednávku. Hned ji pro vás začneme připravovat. Pizzerie Jablečná borovice.
                 </div>
             </div>
@@ -37,10 +42,14 @@
                 1,5 tis. komentářů
             </div>
         </div>
-        <hr class="mx-auto border-t border-gray-300 w-full" />
+        <hr class="mx-auto border-t border-gray-300 w-full">
         <div v-if="group === 'B'">
-            <div class="flex flex-row"> Populární komentáře <img class="transform rotate-90 ml-4 filter grayscale"
-                    :src="arrowLeft"> </div>
+            <div class="flex flex-row">
+                Populární komentáře <img
+                    class="transform rotate-90 ml-4 filter grayscale"
+                    :src="arrowLeft"
+                >
+            </div>
         </div>
         <div class="flex flex-row gap-5">
             <img :src="johnyEpic" class="h-16 w-16 ml-2">
@@ -75,5 +84,5 @@ import faceSurprise from '../../assets/face-surprise.png';
 import arrowLeft from "../../assets/arrow-left.svg";
 import johnyEpic from '../../assets/johny-epic.png';
 
-const group = localStorage.getItem('group')
+const group = localStorage.getItem('group');
 </script>

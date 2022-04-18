@@ -4,8 +4,12 @@
         <div class="flex flex-col gap-14">
             <heading-primary> Vyřeš pizza záhadu </heading-primary>
             <div class="flex flex-col gap-8 items-center">
-                <button-primary @click="selectGroup('A')"> Skupina A </button-primary>
-                <button-primary @click="selectGroup('B')"> Skupina B </button-primary>
+                <button-primary @click="selectGroup('A')">
+                    Skupina A
+                </button-primary>
+                <button-primary @click="selectGroup('B')">
+                    Skupina B
+                </button-primary>
             </div>
         </div>
         <router-link class="text-zsi-500 text-lg font-moreno font-semibold" :to="{ name: 'Game' }">
