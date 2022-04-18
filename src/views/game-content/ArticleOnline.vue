@@ -1,6 +1,6 @@
 <template>
 <div class="flex flex-1 flex-col gap-8 py-4">
-    <h1 class="text-[1.75rem] font-extrabold mt-2">
+    <h1 class="text-[1.65rem] font-moreno font-extrabold mt-2">
         Pizza s ananasem zase udeřila. Kdo bude další?
     </h1>
     <profile-info :image="aktualneLogo" smaller-image heading="Aktuality365.cz" sub-heading="Včera, 19:00" />

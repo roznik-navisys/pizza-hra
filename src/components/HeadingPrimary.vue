@@ -1,5 +1,5 @@
 <template>
-    <h1 class="text-[2.5rem] leading-snug mx-auto text-center font-extrabold uppercase">
+    <h1 class="text-[2.5rem] leading-snug mx-auto text-center font-moreno font-extrabold uppercase">
         <slot />
     </h1>
 </template>

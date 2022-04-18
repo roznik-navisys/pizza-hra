@@ -1,6 +1,6 @@
 <template>
 <div class="flex flex-1 flex-col justify-between py-4">
-    <h1 class="text-zsi-500 text-lg font-semibold" :to="{ name: 'Game' }">
+    <h1 class="text-zsi-500 text-lg font-moreno font-semibold" :to="{ name: 'Game' }">
         Skupina {{ group }}
     </h1>
     <image-large :image="groupIntro" />

@@ -45,7 +45,7 @@
         <div class="flex flex-row gap-5">
             <img :src="johnyEpic" class="h-16 w-16 ml-2">
             <div>
-                <div class="bg-gray-300 text-black rounded-3xl py-3 px-5 text-[1.0625rem] leading-snug text-left">
+                <div class="bg-gray-300 text-black rounded-3xl py-3 px-5 text-base leading-snug text-left">
                     <span class="font-semibold block mb-1"> Johnny EPIC </span>
                     Je tu jasný důkaz, že pizzerie je vinná. Když si člověk proklikne odkaz adresy, pošle ho to na
                     známou plantáž ananasů. Dále se tam McWest zmiňuje o speciálu, který pizzerie ve svém menu jinak

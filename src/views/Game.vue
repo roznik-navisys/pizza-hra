@@ -2,7 +2,7 @@
     <nav class="flex justify-between py-8">
         <img :src="arrowLeft" class="px-3 py-1 transform rotate-180 filter" :class="{ 'invisible': !route.meta.prev }"
             @click="route.meta.prev && navigateTo(route.meta.prev as string)" />
-        <span class="text-zsi-500 text-base font-semibold">
+        <span class="text-zsi-500 text-base font-moreno font-semibold">
             {{ currentScreenName }}
         </span>
         <img :src="arrowLeft" class="px-3 py-1 filter" :class="{ 'invisible': !route.meta.next }"
