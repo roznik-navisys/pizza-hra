@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-1 flex-col justify-between py-4">
+    <div class="flex h-full flex-1 flex-col justify-between py-4">
         <image-large :image="zsiLogo" class="h-12" />
         <div class="flex flex-col gap-14">
             <heading-primary> Vyřeš pizza záhadu </heading-primary>
