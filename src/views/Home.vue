@@ -16,6 +16,7 @@
             Pro učitele
         </router-link>
     </div>
+    <confirm-modal ref="confirm" />
 </template>
 
 <script setup lang="ts">
@@ -24,10 +25,24 @@ import zsiLogo from "../assets/zsi-logo.png";
 import { useRouter } from "vue-router";
 import ImageLarge from "../components/ImageLarge.vue";
 import HeadingPrimary from "../components/HeadingPrimary.vue";
+import ConfirmModal from "../components/ConfirmModal.vue";
+import { ref } from "vue";
 
 const router = useRouter();
+const confirm = ref(
+    null as null | {
+        show: (heading: string, message: string) => Promise<boolean>;
+    }
+);
 
-const selectGroup = (group: "A" | "B") => {
+const selectGroup = async (group: "A" | "B") => {
+    if (
+        !(await confirm.value!.show(
+            "Potvrdit skupinu",
+            `Opravdu si přejete zvolit skupinu ${group}? <br> Tuto volbu nebude možné změnit.`
+        ))
+    )
+        return;
     localStorage.setItem("group", group);
     router.push({ name: "Intro" });
 };

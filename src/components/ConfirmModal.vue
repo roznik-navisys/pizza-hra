@@ -1,24 +1,23 @@
 <template>
     <teleport to="body">
         <transition name="modal">
-            <div v-if="show" class="fixed z-50 inset-0 overflow-y-auto" @close="$emit('close')">
+            <div v-if="open" class="fixed z-50 inset-0 overflow-y-auto" @close="$emit('close')">
                 <div class="flex bg-black bg-opacity-40 items-end justify-center h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
                         &#8203;
                     </span>
                     <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-                        <h3 class="text-lg text-center font-semibold">
-                            {{ message }}
+                        <h3 class="text-2xl font-moreno text-center font-semibold">
+                            {{ dialog.heading }}
                         </h3>
-                        <p v-if="text" class="py-5">
-                            {{ text }}
-                        </p>
-                        <div class="flex gap-2 justify-center">
-                            <button-primary v-if="buttonNo" @click="$emit('close', false)">
-                                {{ buttonNo }}
+                        <!-- eslint-disable-next-line vue/no-v-html -->
+                        <p v-if="dialog.message" class="py-8 px-2 sm:px-8 text-lg text-center" v-html="dialog.message" />
+                        <div class="flex flex-wrap gap-3 justify-center">
+                            <button-primary @click="cancel">
+                                Zrušit
                             </button-primary>
-                            <button-primary @click="$emit('close', true)">
-                                {{ buttonYes }}
+                            <button-primary @click="confirm">
+                                Potvrdit
                             </button-primary>
                         </div>
                     </div>
@@ -29,31 +28,43 @@
 </template>
 
 <script setup lang="ts">
+import { reactive, ref } from "vue";
 import ButtonPrimary from "./ButtonPrimary.vue";
 
-defineProps({
-    show: {
-        type: Boolean,
-        required: true
-    },
-    message: {
-        type: String,
-        required: true
-    },
-    text: {
-        type: String,
-        default: ""
-    },
-    buttonYes: {
-        type: String,
-        default: "Ok"
-    },
-    buttonNo: {
-        type: String,
-        default: ""
-    }
+const open = ref(false);
+let resolvePromise: any;
+let rejectPromise: any;
+
+const dialog = reactive({
+    heading: '',
+    message: '',
 });
-defineEmits(["close"]);
+
+const show = async (
+    heading: string,
+    message: string,
+) => {
+    open.value = true;
+    dialog.message = message;
+    dialog.heading = heading;
+    return new Promise((resolve, reject) => {
+        resolvePromise = resolve;
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        rejectPromise = reject;
+    });
+};
+
+defineExpose({ show });
+
+const confirm = () => {
+    open.value = false;
+    resolvePromise(true);
+};
+
+const cancel = () => {
+    open.value = false;
+    resolvePromise(false);
+};
 </script>
 
 <style>
