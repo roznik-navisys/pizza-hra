@@ -77,12 +77,25 @@ const routes: Array<RouteRecordRaw> = [
                 component: () => import('../views/Conclusion.vue'),
             },
         ],
+    },
+    { 
+        path: '/:pathMatch(.*)*',
+        redirect: { name: 'Home' },
     }
 ];
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
+});
+
+router.beforeEach((r) => {
+    if (r.name === 'Home' && localStorage.getItem('group')) {
+        router.push({ name: 'Intro' });
+    }
+    if (['Game', 'Conclusion', 'Intro'].includes(r.matched[1]?.name as string) && !localStorage.getItem('group')) {
+        router.push({ name: 'Home' });
+    }
 });
 
 export default router;

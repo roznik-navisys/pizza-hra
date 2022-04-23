@@ -41,7 +41,7 @@ const currentScreenName = computed(() => {
 });
 
 const navigateTo = (routeName: string) => {
-    router.push({ name: routeName });
     window.scrollTo(0, 0);
+    router.push({ name: routeName });
 };
 </script>
