@@ -54,7 +54,7 @@ const dialog = reactive({
 });
 
 const passwordMatch = computed(() => {
-    return !(dialog.password) && (dialog.password !== inputPassword.value);
+    return !!(!dialog.password) || (dialog.password === inputPassword.value);
 });
 
 const show = async (
