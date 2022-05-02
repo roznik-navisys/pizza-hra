@@ -27,7 +27,7 @@
                             <button-primary @click="cancel">
                                 Zrušit
                             </button-primary>
-                            <button-primary :disabled="(!!dialog.password) && (dialog.password !== inputPassword)" @click="confirm">
+                            <button-primary :disabled="!passwordMatch" @click="confirm">
                                 Potvrdit
                             </button-primary>
                         </div>
@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from "vue";
+import { computed, reactive, ref } from "vue";
 import ButtonPrimary from "./ButtonPrimary.vue";
 
 const open = ref(false);
@@ -51,6 +51,10 @@ const dialog = reactive({
     heading: '',
     message: '',
     password: undefined as undefined | string,
+});
+
+const passwordMatch = computed(() => {
+    return !(dialog.password) && (dialog.password !== inputPassword.value);
 });
 
 const show = async (
@@ -72,7 +76,7 @@ const show = async (
 defineExpose({ show });
 
 const confirm = () => {
-    if (dialog.password !== inputPassword.value) return;
+    if (!passwordMatch.value) return;
     open.value = false;
     resolvePromise(true);
 };
