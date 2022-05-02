@@ -6,17 +6,28 @@
                     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
                         &#8203;
                     </span>
-                    <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+                    <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-3 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
                         <h3 class="text-2xl font-moreno text-center font-semibold">
                             {{ dialog.heading }}
                         </h3>
                         <!-- eslint-disable-next-line vue/no-v-html -->
                         <p v-if="dialog.message" class="py-8 px-2 sm:px-8 text-lg text-center" v-html="dialog.message" />
+                        <div v-if="dialog.password" class="py-1 mb-6">
+                            <input
+                                v-model="inputPassword"
+                                type="text"
+                                autocorrect="off"
+                                autocomplete="off"
+                                spellcheck="false"
+                                autofocus
+                                class="bg-gray-100 border-2 border-zsi-500 text-lg text-center font-bold text-zsi-700 rounded-lg focus:ring-zsi-500 focus:border-zsi-700 block w-full p-2.5"
+                            >
+                        </div>
                         <div class="flex flex-wrap gap-3 justify-center">
                             <button-primary @click="cancel">
                                 Zrušit
                             </button-primary>
-                            <button-primary @click="confirm">
+                            <button-primary :disabled="(!!dialog.password) && (dialog.password !== inputPassword)" @click="confirm">
                                 Potvrdit
                             </button-primary>
                         </div>
@@ -32,21 +43,25 @@ import { reactive, ref } from "vue";
 import ButtonPrimary from "./ButtonPrimary.vue";
 
 const open = ref(false);
+const inputPassword = ref('');
 let resolvePromise: any;
 let rejectPromise: any;
 
 const dialog = reactive({
     heading: '',
     message: '',
+    password: undefined as undefined | string,
 });
 
 const show = async (
     heading: string,
     message: string,
+    password?: string,
 ) => {
-    open.value = true;
     dialog.message = message;
     dialog.heading = heading;
+    dialog.password = password;
+    open.value = true;
     return new Promise((resolve, reject) => {
         resolvePromise = resolve;
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -57,6 +72,7 @@ const show = async (
 defineExpose({ show });
 
 const confirm = () => {
+    if (dialog.password !== inputPassword.value) return;
     open.value = false;
     resolvePromise(true);
 };

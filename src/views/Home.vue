@@ -12,7 +12,7 @@
                 </button-primary>
             </div>
         </div>
-        <router-link class="text-zsi-500 text-lg font-moreno font-semibold" :to="{ name: 'Game' }">
+        <router-link class="text-zsi-500 text-lg font-moreno font-semibold" :to="{ name: 'Teachers' }">
             Pro učitele
         </router-link>
     </div>
