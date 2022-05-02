@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-1 flex-col justify-between py-4">
-        <h1 class="text-zsi-500 text-lg font-moreno font-semibold" :to="{ name: 'Game' }">
+        <h1 class="text-zsi-500 text-lg font-moreno font-semibold mt-3" :to="{ name: 'Game' }">
             Skupina {{ group }}
         </h1>
         <image-large :image="groupIntro" />
@@ -15,7 +15,7 @@
                 Zaznamenávejte si všechny podstatné informace a data. Budou se vám hodit, až budete své závěry prezentovat ostatním.
             </p>
         </div>
-        <div class="mt-4">
+        <div class="mt-3">
             <button-primary @click="router.push({ name: 'ArticleIntro' })">
                 Začít
             </button-primary>
