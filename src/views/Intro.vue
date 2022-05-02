@@ -15,7 +15,7 @@
                 Zaznamenávejte si všechny podstatné informace a data. Budou se vám hodit, až budete své závěry prezentovat ostatním.
             </p>
         </div>
-        <div>
+        <div class="mt-4">
             <button-primary @click="router.push({ name: 'ArticleIntro' })">
                 Začít
             </button-primary>
