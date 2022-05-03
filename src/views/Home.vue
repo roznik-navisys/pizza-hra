@@ -44,7 +44,7 @@ const selectGroup = async (group: "A" | "B") => {
     )
         return;
     localStorage.setItem("group", group);
-    localStorage.setItem("lockedUntil", (Date.now() + 900000).toString());
+    localStorage.setItem("lockedUntil", (Date.now() + 600000).toString());
     router.push({ name: "Intro" });
 };
 </script>
