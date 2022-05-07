@@ -43,35 +43,37 @@
             </div>
         </div>
         <hr class="mx-auto border-t border-gray-300 w-full">
-        <div v-if="group === 'B'">
-            <div class="flex flex-row">
-                Populární komentáře <img
-                    class="transform rotate-90 ml-4 filter grayscale"
-                    :src="arrowLeft"
-                >
-            </div>
-        </div>
-        <div class="flex flex-row gap-5">
-            <img :src="johnyEpic" class="h-16 w-16 ml-2">
+        <template v-if="group === 'B'">
             <div>
-                <div class="bg-gray-300 text-black rounded-3xl py-3 px-5 text-base leading-snug text-left">
-                    <span class="font-semibold block mb-1"> Johnny EPIC </span>
-                    Je tu jasný důkaz, že pizzerie je vinná. Když si člověk proklikne odkaz adresy, pošle ho to na
-                    známou plantáž ananasů. Dále se tam McWest zmiňuje o speciálu, který pizzerie ve svém menu jinak
-                    nenabízí. Co to v tom případě znamená? A největší důkaz je samotný název pizzerie. Když si ho
-                    přeložíte a prohodíte slova výjde vám anglický název pineapple = ananas.
+                <div class="flex flex-row">
+                    Populární komentáře <img
+                        class="transform rotate-90 ml-4 filter grayscale"
+                        :src="arrowLeft"
+                    >
                 </div>
-                <div class="flex flex-row-reverse justify-between mt-3">
-                    <div class="flex flex-row gap-1 text-base bg-pink-200 relative -top-6 rounded-xl p-2">
-                        82
-                        <img class="h-6 w-6 ml-1" :src="faceSurprise">
+            </div>
+            <div class="flex flex-row gap-5">
+                <img :src="johnyEpic" class="h-16 w-16 ml-2">
+                <div>
+                    <div class="bg-gray-300 text-black rounded-3xl py-3 px-5 text-base leading-snug text-left">
+                        <span class="font-semibold block mb-1"> Johnny EPIC </span>
+                        Je tu jasný důkaz, že pizzerie je vinná. Když si člověk proklikne odkaz adresy, pošle ho to na
+                        známou plantáž ananasů. Dále se tam McWest zmiňuje o speciálu, který pizzerie ve svém menu jinak
+                        nenabízí. Co to v tom případě znamená? A největší důkaz je samotný název pizzerie. Když si ho
+                        přeložíte a prohodíte slova výjde vám anglický název pineapple = ananas.
                     </div>
-                    <div class="text-base">
-                        300 Odpovědí
+                    <div class="flex flex-row-reverse justify-between mt-3">
+                        <div class="flex flex-row gap-1 text-base bg-pink-200 relative -top-6 rounded-xl p-2">
+                            82
+                            <img class="h-6 w-6 ml-1" :src="faceSurprise">
+                        </div>
+                        <div class="text-base">
+                            300 Odpovědí
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </template>
     </div>
 </template>
 
