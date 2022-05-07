@@ -75,8 +75,8 @@
                 </div>
             </div>
         </div>
-        <div class="flex flex-row gap-4 pt-8">
-            <img v-if="group === 'A'" :src="gabinka" class="w-10 h-10">
+        <div v-if="group === 'A'" class="flex flex-row gap-4 pt-8">
+            <img :src="gabinka" class="w-10 h-10">
             <div class="flex flex-col gap-1 items-start text-[0.9375rem]">
                 <span class="font-bold">
                     Gábinka
