@@ -58,7 +58,7 @@ onMounted(async () => {
     if (
         !(await confirm.value!.show(
             'Vložte učitelské heslo',
-            'Jste-li opravdu učitel, vložte prosím nejprve své učitelské heslo. Je k dostální od kteréhokoli člena Zvolsi.info.',
+            'Jste-li opravdu učitel, vložte prosím nejprve své učitelské heslo. Je k dostání od kteréhokoli člena Zvolsi.info.',
             'zsi2022ucitele'
         ))
     )
